@@ -1,18 +1,33 @@
+/* Se considera o matrice patrata cu n linii, n un numar natural nenul, care contine numere intregi.
+Sa se scrie un program care sa deplaseze elementele de pe prima linie, ultima coloana, ultima linie,
+prima coloana o pozitie spre dreapta, jos, stanga, sus.
+De exemplu, daca initial matricea este
+1   2  3  4 5
+16 75 83 94 6
+15 29 33 64 7
+14 17 18 19 8
+13 12 11 10 9
+
+dupa executarea programului, matricea trebuie sa fie
+
+16  1  2  3  4 
+15 75 83 94  5
+14 29 33 64  6
+13 17 18 19  7 
+12 11 10  9  8 */
+
 #include <iostream>
-#include <fstream>
 #include <iomanip>
 #define dmax 5
 
 using namespace std;
-
-ifstream f("matrice.txt");
 
 void citireMatrice(int a[][dmax], int n)
 {
     int i, j;
     for(i = 0; i < n; i++)
         for(j = 0; j < n; j++)
-            f >> a[i][j];
+            cin >> a[i][j];
 }
 
 void afisareMatrice(int a[][dmax], int n)
@@ -56,7 +71,7 @@ void transforma(int a[][dmax], int n)
 int main()
 {
     int a[dmax][dmax], n;
-    f >> n;
+    cin >> n;
     citireMatrice(a, n);
     afisareMatrice(a, n);
     transforma(a, n);
